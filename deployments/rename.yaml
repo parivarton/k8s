@@ -9,14 +9,15 @@ spec:
   selector:
     matchLabels:
       app: test-deploy
-  strategy: {}
+  strategy: 
+    type: Recreate
   template:
     metadata:
       labels:
         app: test-deploy
     spec:
       containers:
-      - image: httpd
+      - image: httpd:alpine3.18
         name: httpd
         resources: {}
 status: {}
